@@ -6,6 +6,7 @@ const MoviesPage = () => {
         <div>
             {/*HEADER*/}
             <MovieList/>
+            {/*<PosterPreview/>*/}
         </div>
     );
 };
