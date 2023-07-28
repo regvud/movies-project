@@ -1,22 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {moviesServices} from "../../services/moviesServices";
-import MovieListCard from "../MovieListCard/MovieListCard";
 import MovieInfo from "../MovieInfo/MovieInfo";
+import {MovieContext} from "../MoviesPage/MoviesPage";
 
 const MovieList = () => {
-    const [movies, setMovies] = useState([])
+        const {movies, setMovies} = useContext(MovieContext);
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        useEffect(() => {
+            moviesServices.getMovies().then(({data}) => setMovies(data.results))
+        }, [])
 
-    useEffect(() => {
-        moviesServices.getMovies().then(({data}) => setMovies(data.results))
-    }, [])
-
-    return (
-        <div>
-            {/*{movies?.map((movie, id) => (<MovieListCard movie={movie} key={id}/>))}*/}
-            {movies?.map((movie, id) => (<MovieInfo movie={movie} key={id}/>))}
-
-        </div>
-    );
-};
+        return (
+            <div>
+                {/*{movies?.map((movie, id) => (<MovieListCard movie={movie} key={id}/>))}*/}
+                {movies?.map((movie, id) => (<MovieInfo movie={movie} key={id}/>))}
+            </div>
+        );
+    }
+;
 
 export default MovieList;

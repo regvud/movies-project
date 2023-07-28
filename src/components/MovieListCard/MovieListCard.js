@@ -2,8 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {postersServices} from "../../services/postersServices";
 import {postURL} from "../../constants/urls";
 import genre from "../GenreBadge/Genre/Genre";
+import {moviesServices} from "../../services/moviesServices";
 
 const MovieListCard = ({movie}) => {
+    moviesServices.getMovieById()
     const {
         adult,
         backdrop_path,
@@ -27,7 +29,6 @@ const MovieListCard = ({movie}) => {
 
     const genresArr = [];
     genre_ids.forEach(genre => genresArr.push(genre))
-    console.log(genresArr)
 
     return (
         <div>

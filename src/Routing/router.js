@@ -9,7 +9,8 @@ export const router = createBrowserRouter([
         element: <MoviesPage/>,
     },
     {
-        path: "/genre",
-        element: <GenreBadge/>,
+        path: '/movie',
+        element:
+            <MovieListCard/>,
     },
 ]);
