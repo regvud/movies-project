@@ -2,5 +2,5 @@ import {apiServices} from "./apiServices";
 import {postURL} from "../constants/urls";
 
 export const postersServices = {
-    getPost: (post) => (apiServices.get(`${postURL}${post}`))
+    getPost: (post_url) => (apiServices.get(`${postURL}${post_url}`))
 }
