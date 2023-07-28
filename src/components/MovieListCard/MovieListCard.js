@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {postersServices} from "../../services/postersServices";
 import {postURL} from "../../constants/urls";
 import genre from "../GenreBadge/Genre/Genre";
-import {logDOM} from "@testing-library/react";
 
 const MovieListCard = ({movie}) => {
     const {
