@@ -1,17 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {postURL} from "../../constants/urls";
-import {Navigate, redirect} from "react-router-dom";
-import MovieListCard from "../MovieListCard/MovieListCard";
+import {router} from "../../Routing/router";
 
 const PosterPreview = ({poster_path, title, movie}) => {
     const [trigger, setTrigger] = useState(false)
 
+    // console.log(movie)
+
+    const navigate = (id) => {
+        // return (router.navigate('/movie'))
+        console.log('navigate')
+    }
+
+
     return (
         <div>
-            <img src={`${postURL}${poster_path}`} alt={title} onClick={() => {
-                setTrigger(prevState => !prevState)
-            }}/>
-            {trigger ? <Navigate to='/movie'/> : false}
+            <img src={`${postURL}${poster_path}`} alt={title} onClick={() => navigate(movie.id)}/>
         </div>
     )
 

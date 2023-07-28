@@ -1,6 +1,7 @@
 import React, {createContext, useState} from 'react';
 import MovieList from "../MovieList/MovieList";
 import GenreBadge from "../GenreBadge/GenreBadge";
+import {Outlet} from "react-router-dom";
 
 export const MovieContext = createContext(null);
 const MoviesPage = () => {

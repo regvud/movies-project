@@ -1,31 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {postersServices} from "../../services/postersServices";
 import {postURL} from "../../constants/urls";
 import genre from "../GenreBadge/Genre/Genre";
 import {moviesServices} from "../../services/moviesServices";
+import {MovieContext} from "../MoviesPage/MoviesPage";
 
-const MovieListCard = ({movie}) => {
+const MovieListCard = () => {
     moviesServices.getMovieById()
-    const {
-        adult,
-        backdrop_path,
-        genre_ids,
-        id,
-        original_language,
-        original_title,
-        overview,
-        popularity,
-        poster_path,
-        release_date,
-        title,
-        video,
-        vote_average,
-        vote_count
-    } = movie
-    // const [img, setImg] = useState(null);
-    // useEffect(() => {
-    //     postersServices.getPost(poster_path).then(({data}) => setImg(data))
-    // }, [])
+    // const {
+    //     adult,
+    //     backdrop_path,
+    //     genre_ids,
+    //     id,
+    //     original_language,
+    //     original_title,
+    //     overview,
+    //     popularity,
+    //     poster_path,
+    //     release_date,
+    //     title,
+    //     video,
+    //     vote_average,
+    //     vote_count
+    // } = movie
 
     const genresArr = [];
     genre_ids.forEach(genre => genresArr.push(genre))
