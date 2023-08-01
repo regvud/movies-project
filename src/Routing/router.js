@@ -5,7 +5,7 @@ import MovieListCard from "../components/MovieListCard/MovieListCard";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: "",
         element: <MoviesPage/>,
         children: [
             {
@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
                 element: <MovieList/>,
             },
             {
-                path: '/movie',
+                path: '/movie/:id',
                 element: <MovieListCard/>,
             }
         ]

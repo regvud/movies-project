@@ -1,19 +1,19 @@
 import React, {useContext} from 'react';
 import {postURL} from "../../constants/urls";
-import {Link, useNavigate} from "react-router-dom";
-import MovieListCard from "../MovieListCard/MovieListCard";
-import {router} from "../../Routing/router";
-import ContextProvider from "../HOC/ContextProvider";
+import {useNavigate} from "react-router-dom";
+import {Context} from "../HOC/ContextProvider";
 
 const PosterPreview = ({movie}) => {
     const {title, poster_path, id} = movie
-    const {movieId, setMovieId} = useContext(ContextProvider)
-
+    const {movieId, setMovieId} = useContext(Context)
     const navigate = useNavigate();
+
     const navigateTo = (id) => {
         setMovieId(id)
-        navigate('/movie', {replace: true})
+        navigate(`/movie/${id}`)
+
     }
+    console.log(movieId)
     return (
         <div>
             <img src={`${postURL}${poster_path}`} alt={title} onClick={() => navigateTo(id)}/>

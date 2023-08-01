@@ -1,14 +1,14 @@
 import React, {useContext, useEffect} from 'react';
 import {moviesServices} from "../../services/moviesServices";
 import MovieInfo from "../MovieInfo/MovieInfo";
-import ContextProvider from "../HOC/ContextProvider";
+import ContextProvider, {Context} from "../HOC/ContextProvider";
 
 const MovieList = () => {
-        // const {movies, setMovies} = useContext(ContextProvider)
+        const {movies, setMovies} = useContext(Context)
 
-        // useEffect(() => {
-        //     moviesServices.getMovies().then(({data}) => setMovies(data.results))
-        // }, [])
+        useEffect(() => {
+            moviesServices.getMovies().then(({data}) => setMovies(data.results))
+        }, [])
 
         // const time = () => {
         //
@@ -22,8 +22,7 @@ const MovieList = () => {
         // time()
         return (
             <div>
-                {/*{movies?.map((movie, id) => (<MovieInfo movie={movie} key={id}/>))}*/}
-                <h1>list</h1>
+                {movies?.map((movie, id) => (<MovieInfo movie={movie} key={id}/>))}
             </div>
         );
     }
