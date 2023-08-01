@@ -3,18 +3,16 @@ import {postURL} from "../../constants/urls";
 import {router} from "../../Routing/router";
 import {MovieContext} from "../MoviesPage/MoviesPage";
 
-const PosterPreview = ({poster_path, title}) => {
-    const {setTrigger} = useContext(MovieContext)
-    // console.log(movie)
-
+const PosterPreview = ({movie}) => {
+    const {title, poster_path, id} = movie
+    const {movieId, setMovieId} = useContext(MovieContext)
     const navigate = (id) => {
-        return router.navigate(`/movie/${id}`)
+        setMovieId(id)
+        // return router.navigate(`/movie/${id}`)
     }
-
-
     return (
         <div>
-            <img src={`${postURL}${poster_path}`} alt={title} onClick={setTrigger(prev => !prev)}/>
+            <img src={`${postURL}${poster_path}`} alt={title} onClick={() => navigate(id)}/>
         </div>
     )
 

@@ -7,13 +7,13 @@ export const MovieContext = createContext(null);
 const MoviesPage = () => {
     const [movies, setMovies] = useState([])
     const [trigger, setTrigger] = useState(false)
-
+    const [movieId, setMovieId] = useState(null)
     return (
         <div>
-            <MovieContext.Provider value={{movies, setMovies}}>
+            <MovieContext.Provider value={{movies, setMovies, setTrigger, movieId, setMovieId}}>
                 {/*HEADER*/}
-                {/*<MovieList/>*/}
-                {trigger ? <MovieListCard/> : <MovieList/>}
+                <MovieList/>
+                {/*{trigger ? <MovieListCard/> : <MovieList/>}*/}
                 {/*<GenreBadge/>*/}
                 {/*<PosterPreview/>*/}
             </MovieContext.Provider>

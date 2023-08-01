@@ -7,7 +7,7 @@ const MovieInfo = ({movie}) => {
     return (
         <div>
             <h1>{title}</h1>
-            <PosterPreview poster_path={poster_path} title={title} movie={movie}/>
+            <PosterPreview movie={movie}/>
             <h3>{overview}</h3>
         </div>
     );
