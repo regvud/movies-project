@@ -1,15 +1,19 @@
 import React, {useContext} from 'react';
 import MovieList from "../MovieList/MovieList";
-import ContextProvider, {Context} from "../HOC/ContextProvider";
+import {Context} from "../HOC/ContextProvider";
 import MovieListCard from "../MovieListCard/MovieListCard";
+import Navbar from "../Header/Navbar/Navbar";
 
 
 const MoviesPage = () => {
-    const {movieId} = useContext(Context)
+    const {trigger} = useContext(Context)
+
     return (
         <div>
-            {/*HEADER*/}
-            {movieId ? <MovieListCard/> : <MovieList/>}
+            <Navbar/>
+            {trigger ?
+                <MovieListCard/> :
+                <MovieList/>}
             {/*/todo better verification*/}
             {/*<MovieList/>*/}
             {/*<MovieListCard/>*/}

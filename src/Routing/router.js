@@ -5,17 +5,19 @@ import MovieListCard from "../components/MovieListCard/MovieListCard";
 
 export const router = createBrowserRouter([
     {
-        path: "",
+        path: "/",
         element: <MoviesPage/>,
         children: [
             {
-                path: "/list",
+                path: "/list/",
                 element: <MovieList/>,
+                children: [
+                    {
+                        path: 'movie/:id',
+                        element: <MovieListCard/>,
+                    }
+                ]
             },
-            {
-                path: '/movie/:id',
-                element: <MovieListCard/>,
-            }
         ]
     },
 

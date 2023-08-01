@@ -4,17 +4,18 @@ import {moviesServices} from "../../services/moviesServices";
 import {Context} from "../HOC/ContextProvider";
 
 const MovieListCard = () => {
-    const {movieId, film, setFilm} = useContext(Context)
+    const {movieId, film, setFilm, trigger} = useContext(Context)
+    const [genres, setGenres] = useState([])
 
     useEffect(() => {
-        moviesServices.getMovieById(movieId).then(({data}) => setFilm(data))
+            moviesServices.getMovieById(movieId).then(({data}) => setFilm(data))
     }, [])
 
     if (film !== null) {
         const {
             adult,
             backdrop_path,
-            genre_ids,
+            genres, //todo
             id,
             original_language,
             original_title,
@@ -28,16 +29,14 @@ const MovieListCard = () => {
             vote_count
         } = film
 
-
-        const genresArr = [];
-        genre_ids?.forEach(genre => genresArr.push(genre))
-
+        // genres?.forEach(genre => setGenres(genre))
+        console.log(genres)
         return (
             <div>
                 <h1>{title}</h1>
                 <img src={`${postURL}${poster_path}`} alt={title}/>
                 <h3>adult: {adult ? 'true' : 'false'}</h3>
-                <h3>genre_ids: {genresArr.join(',')}</h3>
+                <h3>genres: {genres.id}</h3>
                 <h3>id: {id}</h3>
                 <h3>original_language: {original_language}</h3>
                 <h3>original_title: {original_title}</h3>

@@ -1,27 +1,18 @@
 import React, {useContext, useEffect} from 'react';
 import {moviesServices} from "../../services/moviesServices";
 import MovieInfo from "../MovieInfo/MovieInfo";
-import ContextProvider, {Context} from "../HOC/ContextProvider";
+import {Context} from "../HOC/ContextProvider";
+import styles from './MovieList.module.css'
 
 const MovieList = () => {
-        const {movies, setMovies} = useContext(Context)
+        const {movies, setMovies, trigger, setTrigger} = useContext(Context)
 
         useEffect(() => {
-            moviesServices.getMovies().then(({data}) => setMovies(data.results))
-        }, [])
+                moviesServices.getMovies().then(({data}) => setMovies(data.results))
+        }, [trigger])
 
-        // const time = () => {
-        //
-        //     const timer = setInterval(() => {
-        //         console.log(1)
-        //     }, 1000)
-        //
-        //     return () => clearInterval(timer)
-        //
-        // }
-        // time()
         return (
-            <div>
+            <div className={styles.movieList}>
                 {movies?.map((movie, id) => (<MovieInfo movie={movie} key={id}/>))}
             </div>
         );
