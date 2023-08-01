@@ -8,7 +8,7 @@ const PosterPreview = ({movie}) => {
     const {movieId, setMovieId} = useContext(MovieContext)
     const navigate = (id) => {
         setMovieId(id)
-        // return router.navigate(`/movie/${id}`)
+        return router.navigate(`/movie`)
     }
     return (
         <div>

@@ -9,7 +9,7 @@ export const moviesServices = {
         }
     })),
     // https://api.themoviedb.org/3/movie/76341?api_key=ec284ac475e73003937a013799648b1a
-    getMovieById: (id) => (apiServices.get(`${baseURL}/movie${id}?api_key=ec284ac475e73003937a013799648b1a`, {
+    getMovieById: (id) => (apiServices.get(`${baseURL}/movie/${id}?api_key=ec284ac475e73003937a013799648b1a`, {
         headers: {
             'Authorization': `Bearer ${token}`,
         }

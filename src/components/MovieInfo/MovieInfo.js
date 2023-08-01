@@ -2,7 +2,7 @@ import React from 'react';
 import PosterPreview from "../PosterPreview/PosterPreview";
 
 const MovieInfo = ({movie}) => {
-    const {title, overview, poster_path} = movie
+    const {title, overview} = movie
 
     return (
         <div>

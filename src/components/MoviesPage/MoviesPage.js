@@ -13,7 +13,6 @@ const MoviesPage = () => {
             <MovieContext.Provider value={{movies, setMovies, setTrigger, movieId, setMovieId}}>
                 {/*HEADER*/}
                 <MovieList/>
-                {/*{trigger ? <MovieListCard/> : <MovieList/>}*/}
                 {/*<GenreBadge/>*/}
                 {/*<PosterPreview/>*/}
             </MovieContext.Provider>
