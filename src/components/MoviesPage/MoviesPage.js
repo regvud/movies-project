@@ -9,7 +9,8 @@ const MoviesPage = () => {
     return (
         <div>
             {/*HEADER*/}
-            {movieId ? <MovieListCard/> : <MovieList/>} //todo better verification
+            {movieId ? <MovieListCard/> : <MovieList/>}
+            {/*/todo better verification*/}
             {/*<MovieList/>*/}
             {/*<MovieListCard/>*/}
             {/*<GenreBadge/>*/}
