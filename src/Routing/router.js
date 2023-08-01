@@ -1,16 +1,22 @@
 import {createBrowserRouter} from "react-router-dom";
 import MoviesPage from "../components/MoviesPage/MoviesPage";
-import MovieListCard from "../components/MovieListCard/MovieListCard";
-import GenreBadge from "../components/GenreBadge/GenreBadge";
 import MovieList from "../components/MovieList/MovieList";
+import MovieListCard from "../components/MovieListCard/MovieListCard";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <MovieList/>,
+        element: <MoviesPage/>,
+        children: [
+            {
+                path: "/list",
+                element: <MovieList/>,
+            },
+            {
+                path: '/movie',
+                element: <MovieListCard/>,
+            }
+        ]
     },
-    {
-        path: '/movie',
-        element: <MovieListCard/>,
-    }
+
 ]);
