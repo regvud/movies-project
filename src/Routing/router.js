@@ -11,6 +11,5 @@ export const router = createBrowserRouter([
     {
         path: '/movie',
         element: <MovieListCard/>,
-
-    },
+    }
 ]);

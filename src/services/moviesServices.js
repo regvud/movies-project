@@ -12,7 +12,6 @@ export const moviesServices = {
     getMovieById: (id) => (apiServices.get(`${baseURL}/movie${id}?api_key=ec284ac475e73003937a013799648b1a`, {
         headers: {
             'Authorization': `Bearer ${token}`,
-
         }
     })),
     getGenres: () => (apiServices.get(`${baseURL}${urls.genres.base}`, {
