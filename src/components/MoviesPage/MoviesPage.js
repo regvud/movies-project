@@ -1,11 +1,11 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
-
+import Navbar from "../Header/Navbar/Navbar";
 
 const MoviesPage = () => {
     return (
         <div>
-            <h1>MoviesPage</h1>
+            <Navbar/>
             <Outlet></Outlet>
         </div>
     );

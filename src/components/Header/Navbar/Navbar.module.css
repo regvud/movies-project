@@ -1,0 +1,13 @@
+.main {
+    background-color: grey;
+    font-size: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navLink {
+    text-decoration: none;
+}
+

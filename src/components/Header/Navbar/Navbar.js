@@ -1,19 +1,16 @@
 import React, {useContext} from 'react';
-import {NavLink, Outlet} from "react-router-dom";
-import MoviesPage from "../../MoviesPage/MoviesPage";
-import MovieList from "../../MovieList/MovieList";
-import MovieListCard from "../../MovieListCard/MovieListCard";
+import {NavLink} from "react-router-dom";
 import {Context} from "../../HOC/ContextProvider";
-import styles from '../../MovieList/MovieList.module.css'
+import styles from './Navbar.module.css'
 
 const Navbar = () => {
     const {listTrigger, setListTrigger} = useContext(Context)
     return (
-        <div className={styles.movieList}>
-            <NavLink to={'/'} onClick={() => setListTrigger(prev => !prev)}>Main</NavLink>
-            <NavLink to={'/list'} onClick={() => setListTrigger(prev => !prev)}>List</NavLink>
-            <Outlet></Outlet>
-            {/*{console.log(listTrigger)}*/}
+        <div className={styles.main}>
+            <NavLink to={'/'} className={styles.navLink}
+                     onClick={() => setListTrigger(prev => !prev)}>Main</NavLink>
+            <NavLink to={'/list'} className={styles.navLink}
+                     onClick={() => setListTrigger(prev => !prev)}>List</NavLink>
         </div>
     );
 };

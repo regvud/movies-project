@@ -5,5 +5,5 @@ import MovieListCard from "../components/MovieListCard/MovieListCard";
 export const ROUTES = {
     MAIN: '/',
     LIST: '/list',
-    MOVIE: '/movie'
+    MOVIE: '/movie/:id'
 }

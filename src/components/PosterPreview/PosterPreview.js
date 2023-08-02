@@ -12,7 +12,7 @@ const PosterPreview = ({movie}) => {
     const navigateTo = (id) => {
         setMovieId(id)
         // setMovieTrigger(prev => !prev)
-        navigate(`${ROUTES.MOVIE}`)
+        navigate(`${ROUTES.MOVIE}${id}`)
     }
     return (
         <div>

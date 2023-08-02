@@ -3,6 +3,7 @@ import {moviesServices} from "../../services/moviesServices";
 import MovieInfo from "../MovieInfo/MovieInfo";
 import {Context} from "../HOC/ContextProvider";
 import styles from './MovieList.module.css'
+import {Outlet} from "react-router-dom";
 
 const MovieList = () => {
         const {movies, setMovies, listTrigger} = useContext(Context)
@@ -14,6 +15,7 @@ const MovieList = () => {
         return (
             <div className={styles.movieList}>
                 {movies?.map((movie, id) => (<MovieInfo movie={movie} key={id}/>))}
+                <Outlet></Outlet>
             </div>
         );
     }
