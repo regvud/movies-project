@@ -5,11 +5,11 @@ import {Context} from "../HOC/ContextProvider";
 import styles from './MovieList.module.css'
 
 const MovieList = () => {
-        const {movies, setMovies, trigger, setTrigger} = useContext(Context)
+        const {movies, setMovies, listTrigger} = useContext(Context)
 
         useEffect(() => {
                 moviesServices.getMovies().then(({data}) => setMovies(data.results))
-        }, [trigger])
+        }, [listTrigger])
 
         return (
             <div className={styles.movieList}>

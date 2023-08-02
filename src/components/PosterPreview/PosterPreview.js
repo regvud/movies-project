@@ -2,16 +2,17 @@ import React, {useContext} from 'react';
 import {postURL} from "../../constants/urls";
 import {useNavigate} from "react-router-dom";
 import {Context} from "../HOC/ContextProvider";
+import {ROUTES} from "../../Routing/Routes";
 
 const PosterPreview = ({movie}) => {
     const {title, poster_path, id} = movie
-    const {setMovieId, setTrigger} = useContext(Context)
+    const {setMovieId, setMovieTrigger} = useContext(Context)
     const navigate = useNavigate();
 
     const navigateTo = (id) => {
         setMovieId(id)
-        setTrigger(prev => !prev)
-        navigate(`list/movie/${id}`)
+        // setMovieTrigger(prev => !prev)
+        navigate(`${ROUTES.MOVIE}`)
     }
     return (
         <div>

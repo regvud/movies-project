@@ -4,12 +4,12 @@ import {moviesServices} from "../../services/moviesServices";
 import {Context} from "../HOC/ContextProvider";
 
 const MovieListCard = () => {
-    const {movieId, film, setFilm, trigger} = useContext(Context)
+    const {movieId, film, setFilm} = useContext(Context)
     const [genres, setGenres] = useState([])
 
     useEffect(() => {
             moviesServices.getMovieById(movieId).then(({data}) => setFilm(data))
-    }, [])
+    }, [movieId])
 
     if (film !== null) {
         const {
