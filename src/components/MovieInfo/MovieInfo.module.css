@@ -1,0 +1,33 @@
+.card {
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: ivory;
+
+    padding: 10px;
+    margin: 10px;
+    width: 30%;
+    height: auto;
+    border: 1px solid dimgrey;
+    border-radius: 5px;
+}
+
+.card > h2 {
+    margin: 5px 20px 20px 20px;
+}
+
+.card > p {
+    overflow: auto;
+}
+
+.image {
+    height: 85%;
+}
+
+.image > img {
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #1e1e1e;
+}

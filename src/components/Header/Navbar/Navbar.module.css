@@ -1,13 +1,16 @@
 .main {
-    background-color: grey;
+    background-color: #4effb1;
     font-size: 30px;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 .navLink {
     text-decoration: none;
+    padding: 10px;
+    font-family: "Source Code Pro", serif;
 }
 

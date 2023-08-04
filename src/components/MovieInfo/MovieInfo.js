@@ -1,14 +1,14 @@
 import React from 'react';
 import PosterPreview from "../PosterPreview/PosterPreview";
-import GenreBadge from "../GenreBadge/GenreBadge";
+import styles from './MovieInfo.module.css'
 
 const MovieInfo = ({movie}) => {
     const {title, overview} = movie
     return (
-        <div style={{'width': '30%'}}>
-            <h1>{title}</h1>
+        <div className={styles.card}>
+            <h2>{title}</h2>
             <PosterPreview movie={movie}/>
-            <h3>{overview}</h3>
+            <p>{overview}</p>
         </div>
     );
 };
