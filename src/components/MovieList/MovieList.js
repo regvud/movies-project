@@ -11,17 +11,19 @@ const MovieList = () => {
 
         useEffect(() => {
             moviesServices.getMovies(page).then(({data}) => setMovies(data.results))
-        }, [listTrigger])
+        }, [listTrigger, page])
 
         const usePageChange = () => {
+
             useEffect(() => {
                 setPage(prevState => ++prevState)
-            }, []);
+            }, [page]);
         }
+
         return (
             <>
                 <div>
-                    <button onClick={usePageChange}>Previous</button>
+                    <button onClick={() => usePageChange()}>Previous</button>
                     {/*<button onClick={usePageChange()}>Next</button>*/}
                 </div>
                 <div className={styles.movieList}>
