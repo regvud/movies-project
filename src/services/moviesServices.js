@@ -3,7 +3,7 @@ import {baseURL, urls} from "../constants/urls";
 import {token} from "../constants/token/token";
 
 export const moviesServices = {
-    getMovies: () => (apiServices.get(`${baseURL}${urls.movies.base}`, {
+    getMovies: (page) => (apiServices.get(`${baseURL}${urls.movies.base}?page=${page}`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }

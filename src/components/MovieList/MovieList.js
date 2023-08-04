@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {moviesServices} from "../../services/moviesServices";
 import MovieInfo from "../MovieInfo/MovieInfo";
 import {Context} from "../HOC/ContextProvider";
@@ -7,16 +7,28 @@ import {Outlet} from "react-router-dom";
 
 const MovieList = () => {
         const {movies, setMovies, listTrigger} = useContext(Context)
+        const [page, setPage] = useState(1)
 
         useEffect(() => {
-                moviesServices.getMovies().then(({data}) => setMovies(data.results))
+            moviesServices.getMovies(page).then(({data}) => setMovies(data.results))
         }, [listTrigger])
 
+        const usePageChange = () => {
+            useEffect(() => {
+                setPage(prevState => ++prevState)
+            }, []);
+        }
         return (
-            <div className={styles.movieList}>
-                {movies?.map((movie, id) => (<MovieInfo movie={movie} key={id}/>))}
-                <Outlet></Outlet>
-            </div>
+            <>
+                <div>
+                    <button onClick={usePageChange}>Previous</button>
+                    {/*<button onClick={usePageChange()}>Next</button>*/}
+                </div>
+                <div className={styles.movieList}>
+                    {movies?.map((movie, id) => (<MovieInfo movie={movie} key={id}/>))}
+                    <Outlet></Outlet>
+                </div>
+            </>
         );
     }
 ;
