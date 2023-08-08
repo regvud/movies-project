@@ -10,10 +10,9 @@ const MovieInfo = ({movie}) => {
         <div className={styles.card}>
             <h2>{title}</h2>
             <PosterPreview movie={movie}/>
-            <p>{overview}</p>
             <GenreBadge genre_ids={genre_ids}/>
             <StarsRatingBadge vote_average={vote_average}/>
-
+            <p>{overview}</p>
         </div>
     );
 };

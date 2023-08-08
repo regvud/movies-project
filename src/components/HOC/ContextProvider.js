@@ -6,6 +6,7 @@ const ContextProvider = ({children}) => {
     const [listTrigger, setListTrigger] = useState(false)
     const [movieTrigger, setMovieTrigger] = useState(false)
     const [movieId, setMovieId] = useState(null)
+    const [theme, setTheme] = useState(false)
 
     return (
         <div>
@@ -17,7 +18,9 @@ const ContextProvider = ({children}) => {
                 movieId,
                 setMovieId,
                 movieTrigger,
-                setMovieTrigger
+                setMovieTrigger,
+                theme,
+                setTheme
             }}>
                 {children}
             </Context.Provider>
