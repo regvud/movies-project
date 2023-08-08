@@ -9,6 +9,7 @@
 
     padding: 10px;
     margin: 10px;
+
     width: 30%;
     height: auto;
     border: 1px solid dimgrey;
@@ -16,15 +17,16 @@
 }
 
 .card > h2 {
-    margin: 5px 20px 20px 20px;
+    height: 5%;
 }
 
 .card > p {
+    height: 15%;
     overflow: auto;
 }
 
 .image {
-    height: 85%;
+    height: 80%;
 }
 
 .image > img {

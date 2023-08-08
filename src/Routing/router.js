@@ -21,8 +21,7 @@ export const router = createBrowserRouter([
                 {
                     path: '/genres',
                     element: <GenreBadge/>,
-                }
-
+                },
             ]
         },
     ])
