@@ -3,8 +3,6 @@ import {moviesServices} from "../../services/moviesServices";
 import MovieInfo from "../MovieInfo/MovieInfo";
 import {Context} from "../HOC/ContextProvider";
 import styles from './MovieList.module.css'
-import {Outlet} from "react-router-dom";
-import StarsRatingBadge from "../StarsRatingBadge/StarsRatingBadge";
 
 const MovieList = () => {
         const {movies, setMovies, listTrigger} = useContext(Context)
