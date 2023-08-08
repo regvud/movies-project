@@ -9,7 +9,7 @@ const ContextProvider = ({children}) => {
     const [theme, setTheme] = useState(false)
 
     return (
-        <div>
+        <>
             <Context.Provider value={{
                 movies,
                 setMovies,
@@ -24,7 +24,7 @@ const ContextProvider = ({children}) => {
             }}>
                 {children}
             </Context.Provider>
-        </div>
+        </>
     );
 };
 

@@ -1,7 +1,11 @@
 .movieList {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    /*display: flex;*/
+    /*flex-flow: row wrap;*/
+    /*justify-content: center;*/
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-right: 35px;
 }
 
 .buttonsDiv {

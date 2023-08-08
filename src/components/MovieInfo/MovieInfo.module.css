@@ -2,16 +2,16 @@
     display: flex;
     flex-flow: column;
     overflow: hidden;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
-    background-color: ivory;
+    background-color: lavender;
 
     padding: 10px;
-    margin: 10px;
+    margin: 20px;
 
-    width: 30%;
-    height: auto;
+    width: 90%;
+    /*height: 90%;*/
     border: 1px solid dimgrey;
     border-radius: 5px;
 }
@@ -26,10 +26,17 @@
 }
 
 .image {
-    height: 80%;
+    width: inherit;
+    height: inherit;
+
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .image > img {
+    width: inherit;
+    height: inherit;
     border-radius: 5px;
     box-shadow: 5px 5px 5px #1e1e1e;
 }

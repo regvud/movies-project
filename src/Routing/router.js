@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
             children: [
                 {
                     index: true,
-                    element: <h1>Main Page</h1>
+                    element: <h1 style={{textAlign: "center"}}>Main Page</h1>
                 },
                 {
                     path: ROUTES.LIST,
