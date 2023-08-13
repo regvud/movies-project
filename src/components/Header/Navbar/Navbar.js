@@ -4,14 +4,11 @@ import {Context} from "../../HOC/ContextProvider";
 import styles from './Navbar.module.css'
 
 const Navbar = () => {
-    const {setListTrigger} = useContext(Context)
     return (
         <>
             <div className={styles.main}>
-                <NavLink to={'/'} className={styles.navLink}
-                         onClick={() => setListTrigger(prev => !prev)}>Main</NavLink>
-                <NavLink to={'/list'} className={styles.navLink}
-                         onClick={() => setListTrigger(prev => !prev)}>List</NavLink>
+                <NavLink to={'/'} className={styles.navLink}>Main</NavLink>
+                <NavLink to={'/list'} className={styles.navLink}>List</NavLink>
             </div>
         </>
     );

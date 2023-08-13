@@ -1,16 +1,15 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {moviesServices} from "../../services/moviesServices";
 import MovieInfo from "../MovieInfo/MovieInfo";
-import {Context} from "../HOC/ContextProvider";
 import styles from './MovieList.module.css'
 
 const MovieList = () => {
-        const {movies, setMovies, listTrigger} = useContext(Context)
+        const [movies, setMovies] = useState([])
         const [page, setPage] = useState(1)
 
         useEffect(() => {
             moviesServices.getMovies(page).then(({data}) => setMovies(data.results))
-        }, [listTrigger, page])
+        }, [page])
 
         const pageChange = (action) => {
             if (action === 'next') {

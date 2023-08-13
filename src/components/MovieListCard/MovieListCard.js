@@ -2,6 +2,8 @@ import React, {useContext, useEffect, useState} from 'react';
 import {postURL} from "../../constants/urls";
 import {moviesServices} from "../../services/moviesServices";
 import {Context} from "../HOC/ContextProvider";
+import {useLocation, useNavigate} from "react-router-dom";
+import {ROUTES} from "../../Routing/Routes";
 
 const MovieListCard = () => {
     const {movieId} = useContext(Context)
